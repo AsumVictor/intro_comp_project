@@ -19,10 +19,21 @@ def main():
     3. You have only 7 seconds to answer questions
               Good Luck!🤞
     """)
-    ans = get_int(input(""" Press 
-                        1 to continue 
-                        or
-                        2 to End if you are chicken 🐔😂"""))
+    prompt_message = '''
+    Press: \n
+    1 to Continue \n 
+    or \n
+    any number to exit
+    
+    '''
+    user_choice = get_int(prompt_message)
+    if user_choice != 1:
+        print('You have Exit the game! Thank you')
+        return
+    
+    
+    
+    
 
 # Accept number of players (num_of_players)
  

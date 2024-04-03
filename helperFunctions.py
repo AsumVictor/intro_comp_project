@@ -11,6 +11,7 @@ def get_int(message):
                 raise ValueError
             return n
         except:
+            print()
             print('Please type in a positive integer to proceed!')
 
 def loader(message, emoji='🎮'): 
