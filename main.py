@@ -33,7 +33,6 @@ def main():
     
     
     
-    
 
 # Accept number of players (num_of_players)
  
