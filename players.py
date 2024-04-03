@@ -22,8 +22,8 @@ def init_score_board():
 
 
 def print_score_board(score_board):
-    print("{:<8} {:<15} ".format('Player', 'Score'))
-    print("{:<8} {:<15} ".format('------', '-----'))
+    print("{:<25} {:<8} ".format('Player', 'Score'))
+    print("{:<25} {:<8} ".format('------', '-----'))
     for name, score in score_board.items():
-        print("{:<8} {:<15}".format(name, score))
+        print("{:<25} {:<8}".format(name, score))
 
