@@ -3,7 +3,7 @@ def main():
 # Print something in screen press something contine
 
 # Accept number of players (num_of_players)
-
+ 
 # Create account for all players
 
 # initialized scoreboard -> 0
