@@ -28,5 +28,7 @@ def clear_screen():
     # clear console screen
     os.system('cls')
 
+def delay(s):
+    time.sleep(s)
 
-loader('d')
+

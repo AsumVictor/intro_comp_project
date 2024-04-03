@@ -10,12 +10,6 @@ def get_player_emoji():
     del list_of_images[chosen_image_index]
     return chosen_image
 
-n = 3
-for i in range(3):
-    players.append({
-        'name': 'Asum',
-        'image': get_player_emoji()
-    })
 
 
 def init_score_board():
@@ -26,7 +20,6 @@ def init_score_board():
 
     return score_board
 
-x = init_score_board()
 
 def print_score_board(score_board):
     print("{:<8} {:<15} ".format('Player', 'Score'))
@@ -34,5 +27,3 @@ def print_score_board(score_board):
     for name, score in score_board.items():
         print("{:<8} {:<15}".format(name, score))
 
-
-print_score_board(x)
