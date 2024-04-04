@@ -80,6 +80,9 @@ def is_answer_correct(answer, player_answer,type):
        return points[type][0]
     else:
      print("Wrong ❌")
+     print(f"The correct answer is {answer}")
+     delay(1.5)
      return points[type][1]
+
 
 round_1()
