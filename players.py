@@ -27,3 +27,4 @@ def print_score_board(score_board):
     for name, score in score_board.items():
         print("{:<25} {:<8}".format(name, score))
 
+
