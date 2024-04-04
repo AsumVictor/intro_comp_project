@@ -61,14 +61,16 @@ def input_validator(range):
       }
     while True:
         try:
-            user_input = input(f'Type your answer ({range}): ').lower().strip()
-            
-            if not user_input in allowed_val[range]:
+            user_input = inputimeout(prompt=f'Type your answer ({range}): ', timeout=7)
+            if not user_input.lower().strip() in allowed_val[range]:
                 raise ValueError
             
             return user_input
-        except:
+        except ValueError:
             print(f'Your answer must be {range} ')
+        except:
+            print('Your time is up')
+            return 0
         
 
 def is_answer_correct(answer, player_answer,type):
