@@ -5,8 +5,8 @@ from inputimeout import inputimeout
 try: 
   
     # Take timed input using inputimeout() function 
-    time_over = inputimeout(prompt='Name your best friend:', timeout=7) 
-  
+    time_over = inputimeout(prompt='Name your best friend:', timeout=7)
+    print(time_over) 
 # Catch the timeout error 
 except Exception: 
   

@@ -2,6 +2,8 @@ from helperFunctions import get_int, loader,  clear_screen, delay
 from questionBank import mathematics_set_1, mathematics_set_2
 from players import players,get_player_emoji
 import random
+from inputimeout import inputimeout 
+
 
 for i in range(2):
         players.append({
@@ -81,7 +83,6 @@ def is_answer_correct(answer, player_answer,type):
     else:
      print("Wrong ❌")
      print(f"The correct answer is {answer}")
-     delay(1.5)
      return points[type][1]
 
 
