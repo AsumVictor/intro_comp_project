@@ -1,15 +1,22 @@
 from helperFunctions import get_int, loader,  clear_screen, delay
 from questionBank import mathematics_set_1, mathematics_set_2
-from players import players,get_player_emoji
+from players import players,get_player_emoji, init_score_board, print_score_board
 import random
-from inputimeout import inputimeout 
 
 
+
+# will be removed
 for i in range(2):
         players.append({
-            'name': 'player_name',
+            'name': f'player_name{i}',
             'image': get_player_emoji()
         })
+
+
+score_board = init_score_board()
+print_score_board(score_board)
+
+# End
 
 def round_1():
     print('---- ROUND 1 ----')
@@ -31,6 +38,7 @@ def round_1():
         print(f"{user_answer} is ", end='')
         point = is_answer_correct(answer,user_answer,"others")
         
+        score_board[name] += point
         
         delay(3)
         
@@ -43,7 +51,7 @@ def round_1():
     # MCQ - 10 sec
     
     # T/F - 5 sec
-    
+
     
 
 
@@ -87,3 +95,4 @@ def is_answer_correct(answer, player_answer,type):
 
 
 round_1()
+print(score_board) 
