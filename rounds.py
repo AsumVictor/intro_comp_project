@@ -1,8 +1,8 @@
-from helperFunctions import get_int, loader,  clear_screen, delay,countdown
+from helperFunctions import loader,  clear_screen, delay,countdown
 from questionBank import mathematics_set_1, mathematics_set_2
 from players import players, get_player_emoji, init_score_board, print_score_board
 import random
-import multiprocessing
+
 
 
 # will be removed
@@ -14,7 +14,7 @@ for i in range(2):
 
 
 score_board = init_score_board()
-print_score_board(score_board)
+
 
 # End
 
@@ -41,10 +41,12 @@ def rounds(*,round_number,round_category,round_emoji, round_questions_set1, roun
         point = is_answer_correct(answer, user_answer, "others")
 
         score_board[name] += point
-
+        
         delay(3)
-
+        
     clear_screen()
+    
+    
     print('True or False Set')
     countdown(3)
     # two set for round one
@@ -62,6 +64,12 @@ def rounds(*,round_number,round_category,round_emoji, round_questions_set1, roun
         score_board[name] += point
 
         delay(3)
+    clear_screen()
+    print(f"The results after the {round_category} round, the standings are:")
+    countdown(3,"🥁", message=' ')
+    print("____ SCORE BOARD _____ \n")
+        
+    
     
     # for every set we will ask each player different question with same standard
 
@@ -115,4 +123,5 @@ def is_answer_correct(answer, player_answer, type):
 
 
 rounds(round_number=1, round_category="Mathematics", round_emoji="🧮",round_questions_set1=mathematics_set_1,round_questions_set2=mathematics_set_2 )
+
 print(print_score_board(score_board))

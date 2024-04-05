@@ -1,7 +1,8 @@
 #Importing all utilized functions 
 from helperFunctions import get_int, loader,  clear_screen, delay
 from players import get_player_emoji, init_score_board, print_score_board, players
-
+from rounds import rounds
+from questionBank import mathematics_set_1, mathematics_set_2
 def main():
 #Initial loading screen for game 
     loader("Vicel Trivia Game🎲")
@@ -51,6 +52,7 @@ def main():
     print_score_board(score_board)
     
 # Various Rounds
+rounds(round_number=1, round_category="Mathematics", round_emoji="🧮",round_questions_set1=mathematics_set_1,round_questions_set2=mathematics_set_2 )
 
 # Final score board
 
