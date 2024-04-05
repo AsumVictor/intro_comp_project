@@ -16,3 +16,5 @@ GfG. (2022, October 3). How to clear screen in python? GeeksforGeeks. https://ww
 McKee, A. (2023, October 12). Coding Best practices and Guidelines for Better code. https://www.datacamp.com/tutorial/coding-best-practices-and-guidelines
 
 https://www.youtube.com/watch?v=35yYObtZ95o
+
+https://www.geeksforgeeks.org/how-to-set-an-input-time-limit-in-python/

@@ -1,16 +1,16 @@
 from helperFunctions import get_int, loader,  clear_screen, delay
 from questionBank import mathematics_set_1, mathematics_set_2
-from players import players,get_player_emoji, init_score_board, print_score_board
+from players import players, get_player_emoji, init_score_board, print_score_board
 import random
-
+import multiprocessing
 
 
 # will be removed
 for i in range(2):
-        players.append({
-            'name': f'player_name{i}',
-            'image': get_player_emoji()
-        })
+    players.append({
+        'name': f'player_name{i}',
+        'image': get_player_emoji()
+    })
 
 
 score_board = init_score_board()
@@ -18,11 +18,12 @@ print_score_board(score_board)
 
 # End
 
+
 def round_1():
     print('---- ROUND 1 ----')
     delay(1)
-    loader('     Mathematics','🧮') 
-    
+    loader('     Mathematics', '🧮')
+
     print('PROBLEM SET 1')
     print('You have only 10 seconds in this set')
     delay(1)
@@ -35,24 +36,33 @@ def round_1():
         print(question)
         print(' ')
         user_answer = input_validator('a-d')
+        a = multiprocessing.Process(target=input_validator, args= "a-d")
+        b = multiprocessing.Process(target=countdown, args="7")
         print(f"{user_answer} is ", end='')
-        point = is_answer_correct(answer,user_answer,"others")
-        
-        score_board[name] += point
-        
-        delay(3)
-        
-        
-    
-    # for every set we will ask each player different question with same standard
-    
-    #  Every set will have different time
-    
-    # MCQ - 10 sec
-    
-    # T/F - 5 sec
+        point = is_answer_correct(answer, user_answer, "others")
 
-    
+        score_board[name] += point
+
+        delay(3)
+
+    # for every set we will ask each player different question with same standard
+
+    #  Every set will have different time
+
+
+def countdown(t):
+    for i in range(t+1):
+        loading_bar = '⏰' * (t-i) + "_ " * i
+        progress = t-i
+        print(f"\r{loading_bar} {progress:.1f}seconds ", end='', flush=False)
+        delay(1)
+    print("")
+    print("Time's up❗")
+    # multiprocessing
+
+    # MCQ - 10 sec
+
+    # T/F - 5 sec
 
 
 def get_question(question):
@@ -64,35 +74,35 @@ def get_question(question):
 
 def input_validator(range):
     allowed_val = {
-          'a-d': ['a','b','c','d'],
-          'a-b':['a','b']
-      }
+        'a-d': ['a', 'b', 'c', 'd'],
+        'a-b': ['a', 'b']
+    }
     while True:
         try:
             user_input = input(f'Type your answer ({range}): ').lower().strip()
-            
+
             if not user_input in allowed_val[range]:
                 raise ValueError
-            
+
             return user_input
         except:
             print(f'Your answer must be {range} ')
-        
 
-def is_answer_correct(answer, player_answer,type):
+
+def is_answer_correct(answer, player_answer, type):
     points = {
         't/f': [3, -1],
-        'others' : [5, 0]
+        'others': [5, 0]
     }
-    
+
     if answer == player_answer:
-       print("Correct ✅")
-       return points[type][0]
+        print("Correct ✅")
+        return points[type][0]
     else:
-     print("Wrong ❌")
-     print(f"The correct answer is {answer}")
-     return points[type][1]
+        print("Wrong ❌")
+        print(f"The correct answer is {answer}")
+        return points[type][1]
 
 
 round_1()
-print(score_board) 
+print(print_score_board(score_board))
