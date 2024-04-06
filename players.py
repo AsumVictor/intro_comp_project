@@ -4,7 +4,7 @@ players = []
 
 
 def get_player_emoji():
-    list_of_images = ['👽' ,'💀','🐰','👶','🤶']
+    list_of_images = ['|👽|' ,'|💀|','|🐰|','|👶|','|🤶|','|🥷 |','|🤖|','|👹|']
     chosen_image = random.choice(list_of_images)
     chosen_image_index = list_of_images.index(chosen_image)
     del list_of_images[chosen_image_index]

@@ -1,25 +1,9 @@
 from helperFunctions import loader,  clear_screen, delay,countdown
-from questionBank import mathematics_set_1, mathematics_set_2
-from players import players, get_player_emoji, init_score_board, print_score_board
+from players import players
 import random
 
 
-
-# will be removed
-for i in range(2):
-    players.append({
-        'name': f'player_name{i}',
-        'image': get_player_emoji()
-    })
-
-
-score_board = init_score_board()
-
-
-# End
-
-
-def rounds(*,round_number,round_category,round_emoji, round_questions_set1, round_questions_set2):
+def go_to_round(*,round_number,round_category,round_emoji, round_questions_set1, round_questions_set2, score_board):
     print(f'---- ROUND {round_number} ----')
     delay(1)
     loader(round_category, round_emoji)
@@ -42,7 +26,7 @@ def rounds(*,round_number,round_category,round_emoji, round_questions_set1, roun
 
         score_board[name] += point
         
-        delay(3)
+        delay(1.5)
         
     clear_screen()
     
@@ -60,14 +44,16 @@ def rounds(*,round_number,round_category,round_emoji, round_questions_set1, roun
         user_answer = input_validator('a-b')
         print(f"{user_answer} is ", end='')
         point = is_answer_correct(answer, user_answer, "others")
+        if point == 3:
+            score_board[name] += point
+        else:
+            score_board -= point
 
-        score_board[name] += point
-
-        delay(3)
+        delay(1.5)
     clear_screen()
     print(f"The results after the {round_category} round, the standings are:")
     countdown(3,"🥁", message=' ')
-    print("____ SCORE BOARD _____ \n")
+    print("   ____ SCORE BOARD _____ \n")
         
     
     
@@ -109,7 +95,7 @@ def input_validator(range):
 
 def is_answer_correct(answer, player_answer, type):
     points = {
-        't/f': [3, -1],
+        't/f': [3, 1],
         'others': [5, 0]
     }
 
@@ -122,6 +108,3 @@ def is_answer_correct(answer, player_answer, type):
         return points[type][1]
 
 
-rounds(round_number=1, round_category="Mathematics", round_emoji="🧮",round_questions_set1=mathematics_set_1,round_questions_set2=mathematics_set_2 )
-
-print(print_score_board(score_board))

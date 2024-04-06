@@ -32,7 +32,7 @@ def clear_screen():
 def delay(s):
     time.sleep(s)
 
-def countdown(t, emoji='⏰', message ="Begin❗"): 
+def countdown(t, emoji='⏳', message ="Begin❗"): 
     for i in range(t+1):
         loading_bar = emoji * (t-i) + "_ " *i 
         progress = t-i
