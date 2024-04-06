@@ -12,6 +12,7 @@ def go_to_round(*, round_number, round_category, round_emoji, round_questions_se
     countdown(3)
 
     delay(1)
+    
     # two set for round one
     for player in players:
         clear_screen()
@@ -32,23 +33,24 @@ def go_to_round(*, round_number, round_category, round_emoji, round_questions_se
 
     print('True or False Set')
     countdown(3)
+    
     # two set for round one
     for player in players:
-        clear_screen()
-        name = player['image'] + ' ' + player['name']
-        print(f"{name} your turn!")
-        question, answer = get_question(round_questions_set2)
-        print(question)
-        print(' ')
-        user_answer = input_validator('a-b')
-        print(f"{user_answer} is ", end='')
-        point = is_answer_correct(answer, user_answer, "others")
-        if point == 3:
-            score_board[name] = score_board.get(name) + point
-        else:
-            score_board[name] = score_board.get(name) - point
+         clear_screen()
+         name = player['image'] + ' ' + player['name']
+         print(f"{name} your turn!")
+         question, answer = get_question(round_questions_set2)
+         print(question)
+         print(' ')
+         user_answer = input_validator('a-b')
+         print(f"{user_answer} is ", end='')
+         point = is_answer_correct(answer, user_answer, "t/f")
+         if point == 3:
+             score_board[name] = score_board.get(name) + point
+         else:
+             score_board[name] = score_board.get(name) - point
 
-        delay(1.5)
+         delay(1.5)
     clear_screen()
     print(f"The results after the {round_category} round, the standings are:")
     countdown(3, "🥁", message=' ')

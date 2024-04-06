@@ -18,8 +18,12 @@ def main():
     print(""" Game Rules
     1.There are only 2-3 players🫂
     2. There are 4 rounds in the game:
-    General Knowledge💡, Math🧮, Computing 🖥️ and Science🧪
-    3. You have only 7 seconds to answer questions
+    General Knowledge💡, Math🧮, Computing 🖥️  and Science🧪
+    3. In each round, there are two parts; Problem set 1 and True or False
+    
+    Scoring
+    1. A correct answer in Problem set 1 is a +5 and a wrong answer a 0
+    2. A correct answer in True or False is a +3 and a wrong answer is -1❗ 
               Good Luck!🤞
     """)
     prompt_message = """
@@ -71,10 +75,10 @@ def main():
                 round_questions_set1=science_set_1, round_questions_set2=science_set_2, score_board=score_board)
 
     print_score_board(score_board)
-
+    delay(2)
     clear_screen()
-
-    countdown(2, '🎺', message="At the end of the contest...")
+    print("Final resluts")
+    countdown(3, '🎺', message="At the end of the contest...")
     print(get_winner(num_of_players, score_board))
 
 
