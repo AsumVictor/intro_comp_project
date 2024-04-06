@@ -132,7 +132,7 @@ Computing_set_2 =  {"RAM stands for Random Access Memory.\n\
     a) True\n\
     b) False": "b",
     
-    "True or False: JavaScript is primarily used for server-side scripting.\n\
+    "JavaScript is primarily used for server-side scripting.\n\
     a) True\n\
     b) False": "b"
     }
@@ -276,25 +276,25 @@ science_set_2 =  {"Venus is the hotter than mercury in our solar system.\n\
     a) True\n\
     b) False": "a",
     
-    "True or False: Light travels faster than sound.\n\
+    "Light travels faster than sound.\n\
     a) True\n\
     b) False": "a",
     
-    "True or False: Uranus is the largest planet in our solar system.\n\
+    "Uranus is the largest planet in our solar system.\n\
     a) True\n\
     b) False": "b",
     
-    "True or False: The chemical symbol for potassium is 'P'.\n\
+    "The chemical symbol for potassium is 'P'.\n\
     a) True\n\
     b) False": "b",
     
-    "True or False: The Earth's outer core is composed primarily of solid iron and nickel.\n\
+    "The Earth's outer core is composed primarily of solid iron and nickel.\n\
     a) True\n\
     b) False": "b",
     
-    "True or False: An exothermic reaction increases the energy in its system.\n\
+    "An exothermic reaction increases the energy in its system.\n\
     a) True\n\
-    b) False": "a",
+    b) False": "b",
     
     }
 
