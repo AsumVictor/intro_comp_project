@@ -1,3 +1,7 @@
+# Store All set of questions for each category 
+# Each category has question in dictionary
+# Key is the questions and value is the answer
+
 mathematics_set_1 ={
     "What is the only even prime number?\n\
     a) 1\n\
@@ -68,7 +72,8 @@ mathematics_set_2 =  {
     b) False": "b"
 }
 
-Computing_set_1 =  {"Who is credited with inventing the World Wide Web?\n\
+Computing_set_1 =  {
+    "Who is credited with inventing the World Wide Web?\n\
     a) Bill Gates\n\
     b) Tim Berners-Lee\n\
     c) Steve Jobs\n\
@@ -116,7 +121,8 @@ Computing_set_1 =  {"Who is credited with inventing the World Wide Web?\n\
     c) Base 10\n\
     d) Base 16": "a"
     }
-Computing_set_2 =  {"RAM stands for Random Access Memory.\n\
+Computing_set_2 =  {
+    "RAM stands for Random Access Memory.\n\
     a) True\n\
     b) False": "a",
     
@@ -137,7 +143,8 @@ Computing_set_2 =  {"RAM stands for Random Access Memory.\n\
     b) False": "b"
     }
 
-general_knowledge_set_1 =  {"Who was the first emperor of ancient Rome?\n\
+general_knowledge_set_1 =  {
+    "Who was the first emperor of ancient Rome?\n\
     a) Julius Caesar\n\
     b) Augustus\n\
     c) Nero\n\
@@ -174,7 +181,8 @@ general_knowledge_set_1 =  {"Who was the first emperor of ancient Rome?\n\
     d) Yangtze": "a"
     
     }
-general_knowledge_set_2 =  {"The Great Wall of China is visible from space.\n\
+general_knowledge_set_2 =  {
+    "The Great Wall of China is visible from space.\n\
     a) True\n\
     b) False": "b",
     
@@ -212,7 +220,8 @@ general_knowledge_set_2 =  {"The Great Wall of China is visible from space.\n\
     
     }
 
-science_set_1 =  {"What is the chemical symbol for water?\n\
+science_set_1 =  {
+    "What is the chemical symbol for water?\n\
     a) H2O\n\
     b) CO2\n\
     c) NaCl\n\
@@ -272,7 +281,8 @@ science_set_1 =  {"What is the chemical symbol for water?\n\
     c) Geomorphology\n\
     d) Paleontology": "a"}
 
-science_set_2 =  {"Venus is the hotter than mercury in our solar system.\n\
+science_set_2 =  {
+    "Venus is hotter than mercury in our solar system.\n\
     a) True\n\
     b) False": "a",
     

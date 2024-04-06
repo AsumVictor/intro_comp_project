@@ -17,4 +17,3 @@ McKee, A. (2023, October 12). Coding Best practices and Guidelines for Better co
 
 https://www.youtube.com/watch?v=35yYObtZ95o
 
-https://www.geeksforgeeks.org/how-to-set-an-input-time-limit-in-python/

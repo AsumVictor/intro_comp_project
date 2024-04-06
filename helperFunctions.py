@@ -1,8 +1,9 @@
+# Importing in built functions
 import time
 import os
 
-def get_int(message):
-    # Confirm user integer input 
+#Creation of a funtion that filters user input to ensure that they are positive integers
+def get_int(message): 
     while True: # try till input is a positive interger
         try:
             n = input(f'{message}: ')
@@ -14,6 +15,7 @@ def get_int(message):
             print()
             print('Please type in a positive integer to proceed!')
 
+#Creation of a reusable function that displays a loading screen and message based on the set emoji and message passed as input
 def loader(message, emoji='🎮'): 
     clear_screen() 
     print(message)
@@ -25,13 +27,16 @@ def loader(message, emoji='🎮'):
 
     clear_screen()
 
+#Creation of a function that clears the terminal screen whenever called
 def clear_screen():
     # clear console screen
     os.system('cls')
 
+#Creation of a function that casuses a delay or pause between different lines of code running
 def delay(s):
     time.sleep(s)
 
+#Creation of a function that loads a countdown interface in between rounds
 def countdown(t, emoji='⏳', message ="Begin❗"): 
     for i in range(t+1):
         loading_bar = emoji * (t-i) + "_ " *i 

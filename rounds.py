@@ -1,8 +1,9 @@
+# Importing all utilized functions from different files
 from helperFunctions import loader,  clear_screen, delay, countdown
 from players import players
 import random
 
-
+#Creation of a reusable function that manages the different rounds in the game accepting key arguments as input
 def go_to_round(*, round_number, round_category, round_emoji, round_questions_set1, round_questions_set2, score_board):
     print(f'---- ROUND {round_number} ----')
     delay(1)
@@ -64,14 +65,14 @@ def go_to_round(*, round_number, round_category, round_emoji, round_questions_se
 
     # T/F - 5 sec
 
-
+#Creation of a reusable function that randomly pulls questions from a dictionary of questions in our question bank 
 def get_question(question):
     chosen_question = random.choice(list(question.keys()))
     answer = question[chosen_question]
     del question[chosen_question]
     return [chosen_question, answer]
 
-
+#Creation of a function that filters user input in answering questions based on particular set in a round
 def input_validator(range):
     allowed_val = {
         'a-d': ['a', 'b', 'c', 'd'],
@@ -90,7 +91,7 @@ def input_validator(range):
         except:
             print(f'Your answer must be {range} ')
 
-
+#Creation of a function that checks the user's answer to mark it and returns it's due score
 def is_answer_correct(answer, player_answer, type):
     points = {
         't/f': [3, 1],
@@ -105,7 +106,7 @@ def is_answer_correct(answer, player_answer, type):
         print(f"The correct answer is {answer}")
         return points[type][1]
 
-
+#Creation of a function that determines overall winner of the game based on final points on the scoreboard
 def get_winner(num_of_player, scoreboard):
     if num_of_player == 2:
         player1 = players[0]['image'] + ' ' + players[0]['name']

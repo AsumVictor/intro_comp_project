@@ -1,19 +1,20 @@
-# Importing all utilized functions
+# Importing all utilized functions from different files
 from helperFunctions import get_int, loader,  clear_screen, delay, countdown
 from players import get_player_emoji, init_score_board, print_score_board, players
 from rounds import go_to_round, get_winner
 from questionBank import mathematics_set_1, mathematics_set_2, general_knowledge_set_1, general_knowledge_set_2, Computing_set_1, Computing_set_2, science_set_1, science_set_2
 
-
+#Creation of main function that runs the Quiz game
 def main():
     # Initial loading screen for game
     loader("Vicel Trivia Quiz Game🤓")
 
-# Print something in screen press something contine
+# Printing Quiz home screen 
     print("""Welcome to Vicel Trivia Quiz 🧠 Game!
      💡 🧮 🖥️ 🧪""")
     delay(1.25)
     clear_screen()
+    
 # Game Rules
     print(""" Game Rules
     1.There are only 2-3 players🫂
@@ -28,10 +29,11 @@ def main():
     """)
     prompt_message = """
     Press: 
-    1 to Continue 
+    1 To Continue 
           or 
-    any number to exit
+    Any number to exit ❌
     """
+    #Taking user input to exit or continue
     user_choice = get_int(prompt_message)
     if user_choice != 1:
         print('You have Exited the game! Thank you😔')
@@ -59,32 +61,42 @@ def main():
     print_score_board(score_board)
 
 # Various Rounds
+    #Round 1 General Knowledge
     go_to_round(round_number=1, round_category="General Knowlege", round_emoji="💡",
                 round_questions_set1=general_knowledge_set_1, round_questions_set2=general_knowledge_set_2, score_board=score_board)
+    
+    #Printing Current Scoreboard
     print_score_board(score_board)
-
+    
+    #Round 2 Mathematics
     go_to_round(round_number=2, round_category="Mathematics", round_emoji="🧮",
                 round_questions_set1=mathematics_set_1, round_questions_set2=mathematics_set_2, score_board=score_board)
+    
+    #Printing Current Scoreboard
     print_score_board(score_board)
 
+    #Round 3 Computing
     go_to_round(round_number=3, round_category="Computing", round_emoji="🖥️",
                 round_questions_set1=Computing_set_1, round_questions_set2=Computing_set_2, score_board=score_board)
+    
+    #Printing Current Scoreboard
     print_score_board(score_board)
-
+    
+    #Round 4 Science
     go_to_round(round_number=4, round_category="Science", round_emoji="🧪",
                 round_questions_set1=science_set_1, round_questions_set2=science_set_2, score_board=score_board)
 
+    #Printing Final Scoreboard
     print_score_board(score_board)
     delay(2)
     clear_screen()
+    
+    #Announcing the Final Winner
     print("Final resluts")
     countdown(3, '🎺', message="At the end of the contest...")
     print(get_winner(num_of_players, score_board))
 
 
-# Final score board
 
-# Winner podium
-
-
+#Running The Game
 main()
