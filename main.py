@@ -1,8 +1,8 @@
 # Importing all utilized functions
-from helperFunctions import get_int, loader,  clear_screen, delay
+from helperFunctions import get_int, loader,  clear_screen, delay, countdown
 from players import get_player_emoji, init_score_board, print_score_board, players
-from rounds import go_to_round
-from questionBank import mathematics_set_1, mathematics_set_2,general_knowledge_set_1, general_knowledge_set_2, Computing_set_1, Computing_set_2, science_set_1, science_set_2
+from rounds import go_to_round, get_winner
+from questionBank import mathematics_set_1, mathematics_set_2, general_knowledge_set_1, general_knowledge_set_2, Computing_set_1, Computing_set_2, science_set_1, science_set_2
 
 
 def main():
@@ -56,20 +56,27 @@ def main():
 
 # Various Rounds
     go_to_round(round_number=1, round_category="General Knowlege", round_emoji="💡",
-           round_questions_set1=general_knowledge_set_1, round_questions_set2=general_knowledge_set_2, score_board=score_board)
+                round_questions_set1=general_knowledge_set_1, round_questions_set2=general_knowledge_set_2, score_board=score_board)
     print_score_board(score_board)
-    
+
     go_to_round(round_number=2, round_category="Mathematics", round_emoji="🧮",
-           round_questions_set1=mathematics_set_1, round_questions_set2=mathematics_set_2, score_board=score_board)
+                round_questions_set1=mathematics_set_1, round_questions_set2=mathematics_set_2, score_board=score_board)
     print_score_board(score_board)
-    
+
     go_to_round(round_number=3, round_category="Computing", round_emoji="🖥️",
-           round_questions_set1=Computing_set_1, round_questions_set2=Computing_set_2, score_board=score_board)
+                round_questions_set1=Computing_set_1, round_questions_set2=Computing_set_2, score_board=score_board)
     print_score_board(score_board)
 
     go_to_round(round_number=4, round_category="Science", round_emoji="🧪",
-           round_questions_set1=science_set_1, round_questions_set2=science_set_2, score_board=score_board)
+                round_questions_set1=science_set_1, round_questions_set2=science_set_2, score_board=score_board)
+
     print_score_board(score_board)
+
+    clear_screen()
+
+    countdown(2, '🎺', message="At the end of the contest...")
+    print(get_winner(num_of_players, score_board))
+
 
 # Final score board
 

@@ -24,7 +24,7 @@ def go_to_round(*, round_number, round_category, round_emoji, round_questions_se
         print(f"{user_answer} is ", end='')
         point = is_answer_correct(answer, user_answer, "others")
 
-        score_board[name] += point
+        score_board[name] = score_board.get(name) + point
 
         delay(1.5)
 
@@ -44,9 +44,9 @@ def go_to_round(*, round_number, round_category, round_emoji, round_questions_se
         print(f"{user_answer} is ", end='')
         point = is_answer_correct(answer, user_answer, "others")
         if point == 3:
-            score_board[name] += point
+            score_board[name] = score_board.get(name) + point
         else:
-            score_board -= point
+            score_board[name] = score_board.get(name) - point
 
         delay(1.5)
     clear_screen()
@@ -104,7 +104,7 @@ def is_answer_correct(answer, player_answer, type):
         return points[type][1]
 
 
-def winner(num_of_player, scoreboard):
+def get_winner(num_of_player, scoreboard):
     if num_of_player == 2:
         player1 = players[0]['image'] + ' ' + players[0]['name']
         player2 = players[1]['image'] + ' ' + players[1]['name']
