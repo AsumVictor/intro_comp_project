@@ -29,8 +29,13 @@ def loader(message, emoji='🎮'):
 
 #Creation of a function that clears the terminal screen whenever called
 def clear_screen():
-    # clear console screen
-    os.system('cls')
+    # clear console screens 
+    # For linux and MacOS
+    if(os.name == 'posix'):
+      os.system('clear')
+    # else screen will be cleared for windows
+    else:
+      os.system('cls')
 
 #Creation of a function that casuses a delay or pause between different lines of code running
 def delay(s):

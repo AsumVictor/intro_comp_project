@@ -17,3 +17,5 @@ McKee, A. (2023, October 12). Coding Best practices and Guidelines for Better co
 
 https://www.youtube.com/watch?v=35yYObtZ95o
 
+Singh, T. (2021, December 23). How to clear screen in Python? - Scaler Topics. Scaler Topics. https://www.scaler.com/topics/how-to-clear-screen-in-python/
+
